@@ -1,1 +1,3 @@
-# LVGL V8.2 Bnsed on DSO100
+# LVGL V8.2 Based on DSO100
+
+DS100运行LVGL8.2demo例子，基于STM32F407VG
