@@ -22,6 +22,7 @@
 #include "dac.h"
 #include "rng.h"
 #include "tim.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -66,15 +67,6 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-const char * font = 
-"通道时间档位垂直水平偏移触发阈值耦合方式类型\
-上下探头测量单次普自动运算符号信源中心频率窗\
-函数矩形布莱克曼汉宁明三角背光设置保存波余晖\
-最小秒无限暂停留清除音高低关闭输出正弦峰占空\
-比功耗半亮机分钟速语言文简体繁智能滚开启基模\
-其他重零点校准于時間擋觸發閾類頭測單動運號頻\
-數萊尅漢寧設輝無暫關閉輸機鐘語簡體滾開啓點準於";
-
 /* USER CODE END 0 */
 
 /**
@@ -111,6 +103,7 @@ int main(void)
   MX_DAC_Init();
   MX_TIM4_Init();
   MX_TIM8_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
     HAL_GPIO_WritePin(PWR_CTRL_GPIO_Port,PWR_CTRL_Pin,GPIO_PIN_SET);//背光电源
     HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
@@ -137,25 +130,25 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-//        if(HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET)
-//        {
-//            HAL_Delay(20);
-//            if(HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET)
-//            {
-//                int p;
-//                for(p=0; p<100; p++)
-//                {
-//                    HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_SET);
-//                    HAL_Delay(1);
-//                    HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_RESET);
-//                    HAL_Delay(1);
+        if(HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET)
+        {
+            HAL_Delay(20);
+            if(HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET)
+            {
+                int p;
+                for(p=0; p<100; p++)
+                {
+                    HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_SET);
+                    HAL_Delay(1);
+                    HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_RESET);
+                    HAL_Delay(1);
 
-//                    //CDC_Transmit_FS(str_buf,strlen((const char *)str_buf));/* 发送数据 */
-//                }
-//            }
-//            while((HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET));
-//            HAL_Delay(20);
-//        }
+                    //CDC_Transmit_FS(str_buf,strlen((const char *)str_buf));/* 发送数据 */
+                }
+            }
+            while((HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin) == GPIO_PIN_SET));
+            HAL_Delay(20);
+        }
     }
   /* USER CODE END 3 */
 }

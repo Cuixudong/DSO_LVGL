@@ -49,17 +49,12 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-extern int enc_pos[2];
+
 /**********************
  *      MACROS
  **********************/
 
-uint8_t check_enc(uint8_t para);
-
-
 void lv_port_disp_init(void);
-void lv_port_indev_init(void);
-
 void lv_user_init(void);
 
 

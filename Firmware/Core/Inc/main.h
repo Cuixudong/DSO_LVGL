@@ -66,14 +66,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define CHA_SEL3_Pin GPIO_PIN_3
-#define CHA_SEL3_GPIO_Port GPIOE
-#define CHB_DCAC_Pin GPIO_PIN_13
-#define CHB_DCAC_GPIO_Port GPIOC
-#define RELAY_A_Pin GPIO_PIN_14
-#define RELAY_A_GPIO_Port GPIOC
-#define CHA_DCAC_Pin GPIO_PIN_15
-#define CHA_DCAC_GPIO_Port GPIOC
 #define EC1A_Pin GPIO_PIN_0
 #define EC1A_GPIO_Port GPIOC
 #define EC1B_Pin GPIO_PIN_1
@@ -94,38 +86,8 @@ void Error_Handler(void);
 #define LCD_BL_GPIO_Port GPIOA
 #define BEEP_Pin GPIO_PIN_7
 #define BEEP_GPIO_Port GPIOA
-#define VBAT_Pin GPIO_PIN_4
-#define VBAT_GPIO_Port GPIOC
 #define PWR_CTRL_Pin GPIO_PIN_5
 #define PWR_CTRL_GPIO_Port GPIOC
-#define CLK_B_Pin GPIO_PIN_6
-#define CLK_B_GPIO_Port GPIOC
-#define CLK_A_Pin GPIO_PIN_8
-#define CLK_A_GPIO_Port GPIOC
-#define RELAY_B_Pin GPIO_PIN_9
-#define RELAY_B_GPIO_Port GPIOC
-#define CHB_SEL3_Pin GPIO_PIN_8
-#define CHB_SEL3_GPIO_Port GPIOA
-#define CHG_CTRL_Pin GPIO_PIN_9
-#define CHG_CTRL_GPIO_Port GPIOA
-#define CHB_SEL2_Pin GPIO_PIN_10
-#define CHB_SEL2_GPIO_Port GPIOA
-#define CHB_SEL1_Pin GPIO_PIN_10
-#define CHB_SEL1_GPIO_Port GPIOC
-#define TRIG_CTRL_Pin GPIO_PIN_11
-#define TRIG_CTRL_GPIO_Port GPIOC
-#define CHB_CTRL_Pin GPIO_PIN_12
-#define CHB_CTRL_GPIO_Port GPIOC
-#define ADC_S1_Pin GPIO_PIN_2
-#define ADC_S1_GPIO_Port GPIOD
-#define ADC_S2_Pin GPIO_PIN_3
-#define ADC_S2_GPIO_Port GPIOD
-#define CHA_CTRL_Pin GPIO_PIN_6
-#define CHA_CTRL_GPIO_Port GPIOD
-#define CHA_SEL1_Pin GPIO_PIN_0
-#define CHA_SEL1_GPIO_Port GPIOE
-#define CHA_SEL2_Pin GPIO_PIN_1
-#define CHA_SEL2_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* 开关全局中断的宏 */

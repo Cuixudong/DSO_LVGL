@@ -3275,8 +3275,10 @@ void lcd_fill_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
                 lcd_draw_hline (x - i + 1, y + xr, 2 * (i - 1), color);
                 lcd_draw_hline (x - i + 1, y - xr, 2 * (i - 1), color);
             }
+
             xr--;
         }
+
         /* draw lines from inside (center) */
         lcd_draw_hline(x - xr, y + i, 2 * xr, color);
         lcd_draw_hline(x - xr, y - i, 2 * xr, color);
